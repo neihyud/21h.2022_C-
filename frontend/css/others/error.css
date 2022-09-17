@@ -1,0 +1,19 @@
+.error {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.error-500 {
+    height: 300px;
+    width: 350px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-image: url('https://img.freepik.com/free-vector/500-internal-server-error-concept-illustration_114360-1885.jpg?w=740&t=st=1662994639~exp=1662995239~hmac=88de33b0601cf2358658e10e8d6c8c3d1e6c599455796463313ef913829cd319');
+}
+
+.wrapper-error {
+    position: relative;
+}

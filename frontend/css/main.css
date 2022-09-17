@@ -1,0 +1,153 @@
+@import './base/button.css';
+@import './base/icon.css';
+@import './base/input.css';
+@import './layout/header.css';
+@import './layout/footer.css';
+@import './layout/menu.css';
+@import './layout/popup.css';
+@import './layout/toast.css';
+@import './others/loading.css';
+@import './others/error.css';
+
+:root {
+    --font-size-default: 13px;
+    --wrapper-table-size: calc(100vh - 262px);
+}
+
+@font-face {
+    font-family: MISA Fonts;
+    src: url('../../assets/font/GoogleSans-Regular.otf');
+}
+
+@font-face {
+    font-family: MISA Font Bold;
+    src: url('../../assets/font/GoogleSans-Bold.otf');
+}
+
+@font-face {
+    font-family: MISA Font Italic;
+    src: url('../../assets/font/GoogleSans-Italic.otf');
+}
+
+body {
+    font-family: MISA Fonts;
+    font-size: 13px;
+    color: #454545;
+    margin: 0;
+    min-width: 1024px;
+}
+
+body::-webkit-scrollbar {
+    width: 5px;
+    background-color: #ccc;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: rgb(96, 96, 96);
+    border-radius: 50px;
+}
+
+.label {
+    display: inline-block;
+    font-size: 13px;
+    color: #000000;
+    padding-bottom: 4px;
+}
+
+.title-20 {
+    font-size: 20px;
+    font-family: 'MISA Font Bold';
+}
+
+.title-15 {
+    font-size: 15px;
+    font-family: 'MISA Font Bold';
+}
+
+.u-space-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.u-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.u-flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.half {
+    width: 50%;
+}
+
+.hide {
+    display: none;
+}
+
+.mr-6 {
+    margin-right: 6px;
+}
+
+.mt-12 {
+    margin: 12px 0;
+}
+
+.mt-16 {
+    margin: 16px 0;
+}
+
+.mb-24 {
+    margin-bottom: 24px;
+}
+
+[table-col-w='200'] {
+    width: 200px;
+    max-width: 200px;
+    min-width: 200px;
+}
+
+[table-col-w='180'] {
+    width: 180px;
+    max-width: 180px;
+    min-width: 180px;
+}
+
+[table-col-w='160'] {
+    width: 160px;
+    max-width: 160px;
+    min-width: 160px;
+}
+
+[table-col-w='140'] {
+    width: 140px;
+    max-width: 140px;
+    min-width: 140px;
+}
+
+[table-col-w='130'] {
+    width: 130px;
+    max-width: 130px;
+    min-width: 130px;
+}
+
+[table-col-w='120'] {
+    width: 120px;
+    max-width: 120px;
+    min-width: 120px;
+}
+
+[table-col-w='100'] {
+    width: 100px;
+    max-width: 100px;
+    min-width: 100px;
+}
+
+[table-col-w='80'] {
+    width: 80px;
+    max-width: 80px;
+    min-width: 80px;
+}

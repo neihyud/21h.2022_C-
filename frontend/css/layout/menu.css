@@ -1,0 +1,85 @@
+/* Menu */
+
+.menu {
+    width: 208px;
+    display: flex;
+    flex-direction: column;
+    font-size: 22px;
+}
+
+.menu-top {
+    height: 48px;
+    display: flex;
+    align-items: center;
+}
+
+.menu__icon-top {
+    margin: 0 10px 0 16px;
+}
+
+.menu__icon--toggle {
+    width: 24px;
+    height: 24px;
+    background-image: url('../../assets/img/toggle.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.menu__logo {
+    width: 140px;
+    height: 30px;
+    background-image: url('../../assets/cukcuk-logo.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.menu-item {
+    height: 44px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: var(--font-size-default);
+}
+
+.menu-item:hover:not(.menu-item--selected) {
+    background-color: #e5e5e5;
+    color: #000000;
+}
+
+.menu-item--selected {
+    background-color: #019160;
+    color: #ffffff;
+}
+
+.menu-item__wrapper-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 52px;
+    height: 44px;
+    font-size: 20px;
+}
+
+.menu-item__icon {
+    /* margin: 0 0 0 16px; */
+    height: 20px;
+    width: 20px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.icon--dashboard {
+    background-image: url('../../assets/icon/dashboard.png');
+}
+
+.icon--report {
+    background-image: url('../../assets/icon/report.png');
+}
+
+.icon--dic-employee {
+    background-image: url('../../assets/icon/dic-employee.png');
+}
+
+.icon--setting {
+    background-image: url('../../assets/icon/setting.png');
+}

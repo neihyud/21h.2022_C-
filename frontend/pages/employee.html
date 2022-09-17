@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Employee</title>
+        <link rel="stylesheet" href="../css/main.css" />
+        <link rel="stylesheet" href="../css/pages/employee.css" />
+        <script src="https://kit.fontawesome.com/c909c23c5d.js" crossorigin="anonymous"></script>
+        <!-- JQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <div class="pages-employee">
+            <div class="menu">
+                <div class="menu-top">
+                    <div class="menu__icon-top">
+                        <div class="menu__icon--toggle"></div>
+                        <!-- <i class="fa-solid fa-bars-staggered"></i> -->
+                    </div>
+                    <div class="menu__logo"></div>
+                </div>
+                <div class="menu-item menu-item--selected">
+                    <div class="menu-item__wrapper-icon">
+                        <div class="menu-item__icon icon--dashboard"></div>
+                    </div>
+                    <div class="menu-item__text">Tổng quan</div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item__wrapper-icon">
+                        <div class="menu-item__icon icon--report"></div>
+                    </div>
+                    <div class="menu-item__text">Báo cáo</div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item__wrapper-icon">
+                        <div class="menu-item__icon icon--dashboard"></div>
+                    </div>
+                    <div class="menu-item__text">Mua hàng</div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item__wrapper-icon">
+                        <div class="menu-item__icon icon--dic-employee"></div>
+                    </div>
+                    <div class="menu-item__text">Danh mục nhân viên</div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item__wrapper-icon">
+                        <div class="menu-item__icon icon--setting"></div>
+                    </div>
+                    <div class="menu-item__text">Thiết lập</div>
+                </div>
+            </div>
+            <div class="wrapper-content">
+                <div class="header u-space-between">
+                    <div class="title-15">
+                        Nhà hàng Biển Đông
+                        <span class="icon-down">
+                            <i class="fa-solid fa-angle-down"></i>
+                        </span>
+                    </div>
+                    <div class="header__info">
+                        <div class="header__info-avatar"></div>
+                        <div class="header__info-name">Nguyễn Văn A</div>
+                        <span class="icon-ellipsis"><i class="fa-solid fa-ellipsis"></i></span>
+                    </div>
+                </div>
+
+                <div class="content">
+                    <div class="u-space-between">
+                        <div class="title-20">Danh sách nhân viên</div>
+                        <button class="btn btn-icon js-open-form" tabindex="-1">
+                            <i class="btn__icon fa-solid fa-user-plus"></i>
+                            <span>Thêm nhân viên</span>
+                        </button>
+                    </div>
+                    <div class="u-space-between group-handle">
+                        <div class="group-input">
+                            <input
+                                id="input-search"
+                                class="input"
+                                type="search"
+                                placeholder="Tìm kiếm theo Mã, Tên hoặc Số điện thoại"
+                            />
+                            <select
+                                id="select--department"
+                                class="tag-select tag-select--department"
+                                name=""
+                            ></select>
+                            <select
+                                id="select--position"
+                                class="tag-select tag-select--position"
+                            ></select>
+                        </div>
+                        <div class="u-center">
+                            <button
+                                class="icon-func--employee icon-trash u-center js-icon--delete mr-6"
+                            >
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+
+                            <span class="icon-func--employee u-center js-icon--copy mr-6">
+                                <i class="fa-regular fa-copy"></i>
+                            </span>
+
+                            <span class="icon-func--employee u-center">
+                                <i class="fa-solid fa-arrows-rotate"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <table class="">
+                        <thead>
+                            <tr class="tr-title">
+                                <th table-col-w="120">Mã nhân viên</th>
+                                <th table-col-w="160">Họ và tên</th>
+                                <th table-col-w="80">Giới tính</th>
+                                <th table-col-w="100">Ngày sinh</th>
+                                <th table-col-w="100">Điện thoại</th>
+                                <th table-col-w="200">Email</th>
+                                <th table-col-w="120">Chức vụ</th>
+                                <th table-col-w="140">Phòng ban</th>
+                                <th table-col-w="120" class="table-col--salary">Mức lương</th>
+                                <th table-col-w="">Tình trạng công việc</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <div class="wrapper-table">
+                        <div id="loading"></div>
+                        <div id="wrapper-error" class=""></div>
+                        <table class="list-staff js-list-employees">
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="footer u-space-between">
+                    <div class="footer__number-staff" id="display-number-staff">
+                        Hiển thị 1-10/100nhân viên
+                    </div>
+                    <div class="footer__panigations">
+                        <!-- <div class="footer__panigations-item page-navigation__first-page"></div>
+                        <div class="footer__panigations-item page-navigation__btn-prev"></div> -->
+                        <button class="first-page footer__panigations-item" disabled>
+                            <i class="fas fa-angle-double-left"></i>
+                        </button>
+                        <button class="prev-page footer__panigations-item" disabled>
+                            <i class="fas fa-angle-left"></i>
+                        </button>
+                        <div class="footer__panigations-item page--numbers" id="pagination">
+                            <!-- <div class="page--numbers-item page-current">1</div>
+                            <div class="page--numbers-item">2</div>
+                            <div class="page--numbers-item">3</div>
+                            <div class="page--numbers-item">4</div> -->
+                        </div>
+                        <!-- <div class="footer__panigations-item page-navigation__btn-next"></div>
+                        <div class="footer__panigations-item page-nagavition__end-page"></div> -->
+                        <button class="next-page footer__panigations-item">
+                            <i class="fas fa-angle-right"></i>
+                        </button>
+                        <button class="last-page footer__panigations-item">
+                            <i class="fas fa-angle-double-right"></i>
+                        </button>
+                    </div>
+                    <div class="footer__number-staff">
+                        <select name="" id="number-staff" class="mr-6">
+                            <option value="10">10</option>
+                            <option value="100">100</option>
+                            <option value="200">200</option>
+                        </select>
+                        nhân viên trên trang
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dialog Employee -->
+        <div id="js-dlg-employee" class="dialog u-center hide">
+            <div class="popup popup--employee">
+                <div class="popup__title">THÔNG TIN NHÂN VIÊN</div>
+                <div class="form-wrapper-content">
+                    <div class="popup__content">
+                        <div class="info-content__img">
+                            <div class="avatar"></div>
+                            <span class="img-text">(Vui lòng chọn ảnh có định</span>
+                            <span class="img-text">dạng</span>
+                            <span class="img-text">.jpg, .jpeg, .png, .gif. )</span>
+                        </div>
+                        <div class="info-content__fields">
+                            <div class="title">A. THÔNG TIN CHUNG</div>
+                            <div class="title-line"></div>
+                            <div class="wrapper-fields">
+                                <div class="fields-item">
+                                    <label for="" class="label">
+                                        Mã nhân viên (<span class="input--required">*</span>)
+                                    </label>
+                                    <input
+                                        name="employeeCode"
+                                        type="text"
+                                        class="input field--code"
+                                        placeholder="0123456789"
+                                        required
+                                    />
+                                </div>
+                                <div class="fields-item">
+                                    <label for="" class="label"
+                                        >Họ và tên (<span class="input--required">*</span>)</label
+                                    >
+                                    <input
+                                        name="employeeName"
+                                        type="text"
+                                        class="input"
+                                        placeholder="Nguyen Van A"
+                                        required
+                                    />
+                                </div>
+                            </div>
+                            <div class="wrapper-fields">
+                                <div class="fields-item">
+                                    <label for="" class="label">Ngày sinh</label>
+                                    <input
+                                        name="dateOfBirth"
+                                        type="date"
+                                        class="input"
+                                        value="2020-01-01"
+                                    />
+                                </div>
+                                <div class="fields-item">
+                                    <label for="" class="label">Giới tính</label>
+                                    <select name="gender" id="select--gender" class="input">
+                                        <!-- <option value="" selected>Choose</option> -->
+                                        <option value="0" selected>Nam</option>
+                                        <option value="1">Nữ</option>
+                                        <option value="2">Khác</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="wrapper-fields">
+                                <div class="fields-item">
+                                    <label for="" class="label"
+                                        >Số căn cước (<span class="input--required">*</span>)</label
+                                    >
+                                    <input
+                                        name="identityNumber"
+                                        type="text"
+                                        class="input"
+                                        placeholder="125836215"
+                                        required
+                                    />
+                                </div>
+                                <div class="fields-item">
+                                    <label for="" class="label">Ngày cấp</label>
+                                    <input
+                                        name="identityIssuedDate"
+                                        type="date"
+                                        class="input"
+                                        value="2020-01-01"
+                                    />
+                                </div>
+                            </div>
+                            <div class="wrapper-fields half">
+                                <div class="fields-item">
+                                    <label for="" class="label">Nơi cấp</label>
+                                    <input
+                                        type="text"
+                                        name="identityIssuedPlace"
+                                        class="input"
+                                        placeholder="Ha Noi"
+                                    />
+                                </div>
+                            </div>
+                            <div class="wrapper-fields mb-24">
+                                <div class="fields-item">
+                                    <label for="" class="label"
+                                        >Email (<span class="input--required">*</span>)</label
+                                    >
+                                    <input
+                                        name="email"
+                                        type="email"
+                                        class="input"
+                                        placeholder="example@gmail.com"
+                                        required
+                                    />
+                                </div>
+                                <div class="fields-item">
+                                    <label for="" class="label"
+                                        >Số điện thoại (<span class="input--required">*</span
+                                        >)</label
+                                    >
+                                    <input
+                                        name="phoneNumber"
+                                        type="text"
+                                        class="input"
+                                        placeholder="5163849786"
+                                        required
+                                    />
+                                </div>
+                            </div>
+
+                            <div class="title">B. THÔNG TIN CÔNG VIỆC</div>
+                            <div class="title-line"></div>
+                            <div class="wrapper-fields">
+                                <div class="fields-item">
+                                    <label for="" class="label">Vị trí</label>
+                                    <select
+                                        name="positionName"
+                                        id="popup__select--position"
+                                        class="input"
+                                    ></select>
+                                </div>
+                                <div class="fields-item">
+                                    <label for="" class="label">Phòng ban</label>
+                                    <select
+                                        id="popup__select--department"
+                                        name="departmentName"
+                                        class="input"
+                                    ></select>
+                                </div>
+                            </div>
+                            <div class="wrapper-fields">
+                                <div class="fields-item">
+                                    <label for="" class="label">Mã thuế cá nhân</label>
+                                    <input
+                                        name="taxCode"
+                                        type="text"
+                                        class="input"
+                                        placeholder="54222457754"
+                                    />
+                                </div>
+                                <div class="fields-item">
+                                    <label for="" class="label">Mức lương cơ bản</label>
+                                    <input
+                                        name="salary"
+                                        type="text"
+                                        class="input field--salary"
+                                        placeholder="20.000.000 VND"
+                                    />
+                                </div>
+                            </div>
+                            <div class="wrapper-fields mb-24">
+                                <div class="fields-item">
+                                    <label for="" class="label">Ngày gia nhập công ty</label>
+                                    <input
+                                        type="date"
+                                        name="joiningDate"
+                                        class="input"
+                                        value="2020-01-01"
+                                    />
+                                </div>
+                                <div class="fields-item">
+                                    <label for="" class="label">Tình trạng công việc</label>
+                                    <select name="workStatus" id="select--status" class="input">
+                                        <option value="0" selected="selected">Đang làm việc</option>
+                                        <option value="1">Đã nghỉ làm</option>
+                                        <option value="2">Đang nghỉ phép</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="popup__footer">
+                    <button class="btn btn--short btn--close btn--right">Hủy</button>
+                    <button class="btn btn--short btn-icon js-btn--save">
+                        <i class="btn__icon fa-solid fa-floppy-disk"></i>
+                        <span>Lưu</span>
+                    </button>
+                </div>
+                <div class="icon-close">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dialog Warning -->
+        <div id="" class="dialog dialog--warning u-center hide">
+            <div class="popup">
+                <div class="popup__title title-15">Xóa bản ghi</div>
+                <div class="icon-close">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+                <div id="js-content-warning" class="popup__content mb-24">
+                    Bạn có chắc chắn muốn xóa nhân viên vừa chọn hay không?
+                </div>
+                <div class="popup__footer">
+                    <button class="btn btn--short btn--close btn--right" tabindex="-1">
+                        Không
+                    </button>
+                    <button class="btn btn--short js-btn--agree" tabindex="-1">Có</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dialog Notify -->
+        <div id="" class="dialog dialog--notify u-center hide">
+            <div class="popup">
+                <div class="popup__title title-15">Popup thông báo</div>
+                <div class="icon-close">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+                <div id="js-content-notify" class="popup__content popup__content--notify mb-24">
+                    Kiểm tra lại các trường nhập
+                </div>
+                <div class="popup__footer">
+                    <button
+                        id=""
+                        class="btn btn--close btn--short btn-color--success"
+                        tabindex="-1"
+                    >
+                        Đóng
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="toast"></div>
+
+        <script type="module" src="../js/pages/employee.js"></script>
+        <!-- <script src="../js/pagination.js"></script> -->
+    </body>
+</html>

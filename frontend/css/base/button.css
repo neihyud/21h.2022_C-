@@ -1,0 +1,59 @@
+.btn {
+    background-color: #019160;
+    border-radius: 4px;
+    height: 40px;
+    color: #ffffff;
+    padding: 0 24px;
+    border: none;
+    font-size: 13px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #2fbe8e;
+}
+
+.btn:active {
+    background-color: #01b075;
+}
+
+.btn.btn-icon {
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+}
+
+.btn__icon {
+    margin-right: 8px;
+}
+
+.btn.btn--short {
+    width: 100px;
+}
+
+.btn--close {
+    background-color: transparent;
+    color: #000;
+}
+.dialog__footer .button--cancel:hover,
+.btn--close:focus {
+    background-color: #ccc;
+}
+
+.btn--close:hover {
+    cursor: pointer;
+    background-color: #dedede;
+}
+
+.btn-color--success {
+    background-color: #019160;
+}
+
+.btn--close.btn-color--success:hover {
+    background-color: #2fbe8e;
+}
+
+.btn--close.btn-color--success:active {
+    background-color: #01b075;
+}

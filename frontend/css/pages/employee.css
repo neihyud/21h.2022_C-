@@ -1,0 +1,149 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: MISA Fonts;
+}
+
+.pages-employee {
+    display: flex;
+}
+
+.wrapper-content {
+    flex: 1;
+    border-left: 2px solid #bbbbbb;
+    height: 100vh;
+    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.header {
+    height: 48px;
+    padding: 15px 16px 15px 36px;
+    border-bottom: 2px solid #bbbbbb;
+    width: 100%;
+}
+
+.header__info {
+    display: flex;
+    align-items: center;
+    height: 20px;
+}
+
+.header__info-avatar {
+    height: 24px;
+    width: 24px;
+    background-image: url('../../assets/icon/avatar-default.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.header__info-name {
+    display: inline;
+    padding: 0 16px;
+}
+
+/* Content */
+.content {
+    padding: 20px 16px 0;
+}
+
+.group-handle {
+    margin: 8px 0 4px;
+}
+
+.tag-select--department {
+    margin: 0 16px 0 8px;
+}
+
+/* Table */
+table {
+    text-align: left;
+    border-collapse: collapse;
+    width: 100%;
+    overflow: hidden;
+}
+
+.table-col--salary {
+    text-align: right;
+    padding-right: 15px;
+    padding-left: 0;
+}
+
+.wrapper-table {
+    max-height: var(--wrapper-table-size);
+    overflow: auto;
+    position: relative;
+    min-height: 400px;
+}
+
+/* Scroll bar */
+.wrapper-table::-webkit-scrollbar {
+    width: 5px;
+    background-color: #ccc;
+}
+.wrapper-table::-webkit-scrollbar-thumb {
+    background-color: rgb(96, 96, 96);
+    border-radius: 50px;
+}
+
+th,
+td {
+    display: inline-block;
+    height: 48px;
+    padding-left: 16px;
+    line-height: 48px;
+    border-bottom: 1px solid #ebe8e8;
+    /* white-space: nowrap; */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+tr {
+    white-space: nowrap;
+}
+
+tr:nth-child(2n) {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+tbody tr:hover {
+    cursor: pointer;
+    background-color: #73d27d;
+}
+
+tr.tr-title:first-child {
+    cursor: default;
+    margin-top: 50px;
+}
+
+tr.tr-current {
+    background-color: #29c738;
+}
+
+td:last-child,
+th:last-child {
+    width: 100%;
+}
+
+/* Popup Employee */
+.popup--employee {
+    width: 800px;
+}
+
+.form-wrapper-content {
+    max-height: 550px;
+    overflow: auto;
+}
+
+.form-wrapper-content::-webkit-scrollbar {
+    display: none;
+}
+
+.number-staff.input {
+    padding: 0 4px;
+    width: auto;
+    height: 24px;
+}

@@ -1,0 +1,141 @@
+.dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup {
+    background-color: #ffffff;
+    border-radius: 4px;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 350px;
+}
+
+.popup__title {
+    padding: 24px 60px 24px 24px;
+    font-weight: 600;
+    font-size: 20px;
+    font-family: MISA Font Bold;
+}
+
+.title {
+    font-size: 15px;
+    padding-bottom: 8px;
+    font-family: MISA Font Bold;
+}
+
+.title-line {
+    height: 5px;
+    width: 100px;
+    background-color: #019160;
+    margin-bottom: 6px;
+}
+
+.popup__content {
+    display: flex;
+    flex-direction: row;
+    /* width: 100%; */
+    padding: 0 24px;
+}
+
+.popup__content--notify {
+    display: block;
+    line-height: 24px;
+}
+
+.info-content__fields {
+    flex: 1;
+}
+
+.info-content__img {
+    width: 160px;
+    height: 160px;
+    margin: 0 18px 0 0px;
+}
+
+.info-content__img .avatar {
+    height: 160px;
+    border-radius: 50%;
+    background-image: url(../../assets/img/default-avatar.jpg);
+    background-size: cover;
+    border: 1px solid #ccc;
+}
+
+.info-content__img .img-text {
+    display: block;
+    text-align: center;
+}
+
+.wrapper-fields {
+    display: inline-flex;
+    gap: 16px;
+    width: 100%;
+}
+
+.wrapper-fields.half {
+    width: calc(50% - 5px);
+}
+
+.wrapper-fields + .wrapper-fields {
+    margin-top: 16px;
+}
+
+.fields-item {
+    width: 100%;
+}
+
+.field--salary {
+    text-align: right;
+}
+
+.popup__footer {
+    height: 60px;
+    display: flex;
+    padding: 12px 24px;
+    justify-content: flex-end;
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
+.popup__footer button {
+    height: 36px;
+    justify-content: center;
+}
+
+/* .popup__footer .btn--close {
+    margin-right: 16px;
+} */
+
+.popup__icon {
+    float: left;
+    height: 36px;
+    width: 36px;
+    line-height: 36px;
+    border-radius: 50%;
+    background-color: rgb(230, 226, 226);
+    text-align: center;
+    font-size: 18px;
+}
+
+.popup__icon--warning {
+    color: #ff623d;
+}
+
+.popup__content-main {
+    align-self: center;
+    margin-left: 10px;
+}
+
+.popup__footer .btn--right {
+    margin-right: 16px;
+}
+
+.input--required {
+    color: red;
+}
