@@ -5,10 +5,10 @@ const btnFirstPg = document.querySelector("button.first-page");
 const btnLastPg = document.querySelector("button.last-page");
 
 export const valuePage = {
-    truncate: true,
-    curPage: 1,
-    numberLinkTwoSide: 1,
-    totalPages: 1
+    truncate: true,  // Rút gọn liên kết trang hoặc không (true <=> rút gọn)
+    curPage: 1,  // Khởi tạo page hiện tại là 1
+    numberLinkTwoSide: 1,  // Số lượng liên kết muốn hiển thị ở hai bên trang hiện tại: vd 1 ... 4 5 6 ... 10 ( curPage= 5, liên kết hiển thị 4, 6)
+    totalPages: 1 // Tổng số trang
 }
 
 export function pagination() {
